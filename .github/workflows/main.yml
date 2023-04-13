@@ -1,0 +1,36 @@
+# This is a basic workflow which triggers Action when an release is created .
+# This depicts use of Envirnoment in Github and Its use case .This allows us to have Adhoc Approval process 
+# , Introduce delays and Management of Deployment .
+
+name: Action_Deployment
+
+on:
+ release:
+    types: [published]
+    
+ workflow_dispatch:
+
+jobs:
+ Checkout:
+ #Repository checkout
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Checkout Repository
+ Build:
+    needs: Checkout
+    runs-on: ubuntu-latest
+    environment: Integration
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Run a one-line script
+        run: echo Build Complete
+ Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+    environment: Production
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Run a one-line script
+        run: echo Deployment Complete
