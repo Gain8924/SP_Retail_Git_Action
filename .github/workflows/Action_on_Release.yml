@@ -6,7 +6,7 @@ name: Action_on_Release_Publish
 
 on:
  release:
-    types: [ "released", "published" ]
+    types: [published]
     
  workflow_dispatch:
 
