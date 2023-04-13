@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: Checkout Repository
+        run: echo Checkout Repository
  Build:
     needs: Checkout
     runs-on: ubuntu-latest
