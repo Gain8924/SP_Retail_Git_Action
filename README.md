@@ -1,2 +1,2 @@
 # SP_Retail_Git_Action
-Git Action Demo 
+Git Action Demo SP
