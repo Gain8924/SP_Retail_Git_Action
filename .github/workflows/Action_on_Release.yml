@@ -1,0 +1,34 @@
+# This is a basic workflow which triggers Action when an release is created .
+# When the feature/release branch is requested to be merged in Develop branch, Release should be created
+#at a point when the branch is in state of deployment after all collobration..
+
+name: Action_on_Release_Publish
+
+on:
+ release:
+    types: [ "released", "published" ]
+    
+ workflow_dispatch:
+
+jobs:
+ Checkout:
+ #Repository checkout
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Checkout Repository
+ Build:
+    needs: Checkout
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Run a one-line script
+        run: echo Build Complete
+ Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Run a one-line script
+        run: echo Deployment Complete
