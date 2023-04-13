@@ -1,7 +1,7 @@
 # This is a basic workflow which triggers Action for deployment on Pull request is created on development branch.
 # When the feature/release branch is requested to be merged in Develop branch..
 
-name: Action_on_PR
+name: Action_on_Pull_Request
 on:
   pull_request:
     branches: [ "Development" ]
