@@ -4,7 +4,7 @@
 name: Action_on_Pull_Request
 on:
   pull_request:
-    branches: [ "Development" ]
+    branches: [ "Development" , "main" ]
   workflow_dispatch:
 
 jobs:
