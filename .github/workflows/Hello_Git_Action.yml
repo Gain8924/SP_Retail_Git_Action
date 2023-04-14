@@ -2,7 +2,7 @@
 
 name: Hello_Git_Action
 
-# Controls when the workflow will run
+# Controls when the workflow will run Test
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch check
   push:
